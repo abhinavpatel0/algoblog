@@ -469,6 +469,19 @@
     btoa-lite "^1.0.0"
     universal-user-agent "^6.0.0"
 
+"@octokit/auth-oauth-app@^5.0.0":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-oauth-app/-/auth-oauth-app-5.0.5.tgz#be2a93d72835133b4866ac4721aa628849475525"
+  integrity sha512-UPX1su6XpseaeLVCi78s9droxpGtBWIgz9XhXAx9VXabksoF0MyI5vaa1zo1njyYt6VaAjFisC2A2Wchcu2WmQ==
+  dependencies:
+    "@octokit/auth-oauth-device" "^4.0.0"
+    "@octokit/auth-oauth-user" "^2.0.0"
+    "@octokit/request" "^6.0.0"
+    "@octokit/types" "^9.0.0"
+    "@types/btoa-lite" "^1.0.0"
+    btoa-lite "^1.0.0"
+    universal-user-agent "^6.0.0"
+
 "@octokit/auth-oauth-device@^3.1.1":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@octokit/auth-oauth-device/-/auth-oauth-device-3.1.2.tgz#d299f51f491669f37fe7af8738f5ac921e63973c"
