@@ -8,7 +8,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@octokit/auth-oauth-app": "^4.3.0",
+    "@octokit/auth-oauth-app": "^5.0.0",
     "@octokit/auth-oauth-user": "^2.0.0",
     "@octokit/auth-token": "^2.5.0",
     "@octokit/core": "^3.5.1",
