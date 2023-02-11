@@ -65,67 +65,71 @@ export function ThemeSwitcher({
       {(menuIsOpen || open) && (
         <div className={classes}>
           {Object.keys(COLOR_THEMES).map((theme) => {
-            return (
-              <ThemeIcon
-                key={theme}
-                style={{
-                  "--tw-gradient-from":
-                    COLOR_THEMES[theme].colors["gradient-3"],
-                  "--tw-gradient-to": COLOR_THEMES[theme].colors["gradient-4"],
-                }}
-                onClick={(e) => handleClick(e, theme)}
-              />
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-}
-
-const arrowIcon = (
-  <svg
-    fill="currentColor"
-    className="w-5 h-5 text-gray-400 absolute top-1/2 right-2 -mt-2.5 pointer-events-none"
-  >
-    <path
-      fillRule="evenodd"
-      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-      clipRule="evenodd"
-    ></path>
-  </svg>
+            return <div className={classes}>
+  {Object.keys(COLOR_THEMES).map((theme) => {
+    return (
+      <ThemeIcon
+        key={theme}
+        style={{
+          "--tw-gradient-from":
+            COLOR_THEMES[theme].colors["gradient-3"],
+          "--tw-gradient-to": COLOR_THEMES[theme].colors["gradient-4"],
+        }}
+        onClick={(e) => handleClick(e, theme)}
+      />
+    );
+  })}
+</div>
+)}
+</div>
 );
+}
+const arrowIcon = (
+<svg
+fill="currentColor"
+className="w-5 h-5 text-gray-400 absolute top-1/2 right-2 -mt-2.5 pointer-events-none"
 
+<path
+fillRule="evenodd"
+d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+clipRule="evenodd"
+
+</path>
+</svg>
+);
 export function FontSwitcher({ cssVariable, setData, data }) {
-  const handleFontChange = (e) => {
-    let { value } = e.target;
+const handleFontChange = (e) => {
+let { value } = e.target;
 
-    let root = document.documentElement;
-    setData((prevData) => ({ ...prevData, [cssVariable]: value }));
-    root.style.setProperty(cssVariable, FONT_THEMES[value]);
-  };
+let root = document.documentElement;
+setData((prevData) => ({ ...prevData, [cssVariable]: value }));
+root.style.setProperty(cssVariable, FONT_THEMES[value]);
+};
 
-  return (
-    <div className="relative w-full">
-      <select
-        className="appearance-none cursor-pointer w-full text-gray-900 p-4 pr-8 rounded-xl border border-gray-200 shadow-md dark:text-white dark:bg-gray-700 dark:border-gray-500"
-        onChange={handleFontChange}
-        value={data[cssVariable]}
-      >
-        <option value="sans-serif">sans-serif</option>
-        <option value="serif">serif</option>
-        <option value="monospace">monospace</option>
-      </select>
-      {arrowIcon}
-    </div>
-  );
+return (
+
+  <div className="relative w-full">
+    <select
+      className="appearance-none cursor-pointer w-full text-gray-900 p-4 pr-8 rounded-xl border border-gray-200 shadow-md dark:text-white dark:bg-gray-700 dark:border-gray-500"
+      onChange={handleFontChange}
+      value={data[cssVariable]}
+    >
+      {Object.keys(FONT_THEMES).map((font) => (
+        <option key={font} value={font}>
+          {font}
+        </option>
+      ))}
+    </select>
+    {arrowIcon}
+  </div>
+);
 }
 export default function RecapBar({ data, setData, onClickNext }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const blogTheme = data.theme || "default";
 
   return (
-    <div className="font-sans fixed bottom-4 z-index-10 w-full max-w-[56rem] left-2/4 transform -translate-x-2/4 ">
+    <div className="font-sans fixed bottom-4 z-index-10 w-full max-w-[56rem] left-0 transform -translate-x-0 lg:left-2/4 lg:transform -translate-x-2/4">
       <div className="flex flex-wrap lg:justify-around bg-white dark:bg-black dark:bg-opacity-30 backdrop-blur-lg bg-opacity-30 px-6 pt-4 rounded-xl border border-gray-200 dark:border-white dark:border-opacity-10 shadow-xl">
         <div className="mr-6 flex flex-col mb-4">
           <p className="uppercase mb-2 text-gray-700 font-bold dark:text-white dark:opacity-60">
@@ -158,3 +162,6 @@ export default function RecapBar({ data, setData, onClickNext }) {
     </div>
   );
 }
+
+
+
