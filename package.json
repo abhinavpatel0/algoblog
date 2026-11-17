@@ -20,7 +20,7 @@
     "next": "latest",
     "next-mdx-remote": "^3.0.1",
     "next-remote-watch": "1.0.0",
-    "octokit": "^1.7.1",
+    "octokit": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
